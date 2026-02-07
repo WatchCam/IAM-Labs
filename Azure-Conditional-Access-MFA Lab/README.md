@@ -13,6 +13,22 @@ This mirrors how organizations protect identities against compromised credential
 
 ---
 
+## Security Framing (Problem -> Risk -> Control -> Outcome)
+
+## Problem
+User accounts that rely solely on usernames and passwords are vulnerable to compromise through phishing, credential reuse, and password spraying attacks.
+
+## Risk
+If credentials are compromised, attackers can gain unauthorized access to cloud applications and organizational resources without additional verification, potentially leading to data exposure or account takeover.
+
+## Control
+Azure Conditional Access was configured to enforce Multi-Factor Authentication (MFA) for selected users when accessing cloud applications. This policy applies identity-based controls to require additional verification beyond passwords.
+
+## Outcome
+By enforcing MFA through Conditional Access, the risk of unauthorized access is significantly reduced, ensuring that compromised credentials alone are insufficient to access protected resources.
+
+---
+
 ## Environment
 - Microsoft Entra ID (Azure AD)
 - Azure Portal 
