@@ -24,9 +24,9 @@ A new employee is onboard into the Finance department as a Financial Analyst.
 ![Create User](screenshots/01-create-user.jpeg)
 ![Review User](screenshots/02-review-create.jpeg)
 ![User Overview](screenshots/03-user-overview.jpeg)
-![Finance Group Created](screenshots/04-fincae-group.jpeg)
-![Finance Membership](screenshots/05-finance-membership.jpeg)
-![HR Membership](screenshots/06-hr-membership.jpeg)
+![Finance Group Created](screenshots/06-finance-group.jpeg)
+![Finance Membership](screenshots/07-finance-membership.jpeg)
+![HR Membership](screenshots/09-hr-membership.jpeg)
 
 
 ### Security Controls Demonstrated
@@ -49,8 +49,8 @@ The employee trnasfers from Finance to HR.
 
 ### Evidence
 ![User Overview Updated](screenshots/03-user-overview.jpeg)
-![Finance Group Memebership](screenshots/05-finance-membership.jpeg)
-![HR Group Membership](screenshots/06-hr-membership.jpeg)
+![Finance Group Memebership](screenshots/07-finance-membership.jpeg)
+![HR Group Membership](screenshots/08-hr-membership.jpeg)
 
 ### Security Controls Demonstrated
 - Enforcement of least privilege 
@@ -70,8 +70,8 @@ The employee leaves the organization.
 - Preserved identity object for audit purposes
 
 ### Evidence
-![User Disabled](screenshots/10-user-disabled.jpeg)
-![User Enabled](screenshots/11-user-enabled.jpeg)
+![User Disabled](screenshots/04-user-disabled.jpeg)
+![User Enabled](screenshots/05-user-enabled.jpeg)
 
 ### Security Controls Demonstrated
 - Immediate access termination 
