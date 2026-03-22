@@ -21,12 +21,12 @@ A new employee is onboard into the Finance department as a Financial Analyst.
 - Added user to Finance-Users group
 
 ### Evidence
-![Create User](screenshots/01-create-user.jpeg)
-![Review User](screenshots/02-review-create.jpeg)
-![User Overview](screenshots/03-user-overview.jpeg)
-![Finance Group Created](screenshots/06-finance-group.jpeg)
-![Finance Membership](screenshots/07-finance-membership.jpeg)
-![HR Membership](screenshots/09-hr-membership.jpeg)
+![Create User](screenshots/01-create-user.JPEG)
+![Review User](screenshots/02-review-create.JPEG)
+![User Overview](screenshots/03-user-overview.JPEG)
+![Finance Group Created](screenshots/06-finance-group.JPEG)
+![Finance Membership](screenshots/07-finance-membership.JPEg)
+![HR Membership](screenshots/09-hr-membership.JPEG)
 
 
 ### Security Controls Demonstrated
