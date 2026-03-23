@@ -99,6 +99,9 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### NTFS Permissions - HR
 ![HR Permissions](ActiveDirectory-User-Access-Lab/Screenshots/08_NTFS_Permissions_HR_Team.png.jpeg)
 
+### NTFS Permissions - IT
+![IT Permissions](ActiveDirectory-User-Access-Lab/Screenshots/09_NTFS_Permissions_IT_Support.png.jpeg)
+
 
 ## Why This Matters
 This lab reflects real IAM tasks performed by system administrators and IAM engineers, including user provisioning, access governance, and permission management in enterprise environments.
