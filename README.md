@@ -93,6 +93,9 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### Group Membership
 ![Group Membership](ActiveDirectory-User-Access-Lab/Screenshots/06_User_Group_Membership_Sales_2.png.jpeg)
 
+### Company Shares
+![Company Shares](ActiveDirectory-User-Access-Lab/Screenshots/07_CompanyShares_Folder_Created.png.jpeg)
+
 
 
 ## Why This Matters
