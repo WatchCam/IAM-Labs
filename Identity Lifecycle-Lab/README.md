@@ -49,8 +49,8 @@ The employee trnasfers from Finance to HR.
 
 ### Evidence
 ![User Overview Updated](screenshots/03-user-overview.JPEG)
-![Finance Group Memebership](screenshots/07-finance-membership.JPEG)
-![HR Group Membership](screenshots/08-hr-membership.JPEG)
+![User Removed from Finance Group](screenshots/10-remove-finance.jpeg)
+![HR Group Membership](screenshots/08-hr-group-creation.JPEG)
 
 ### Security Controls Demonstrated
 - Enforcement of least privilege 
