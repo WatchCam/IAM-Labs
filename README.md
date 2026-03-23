@@ -79,6 +79,6 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ![Domain Overview](screenshots/01_Aduc_Domain_Overview.png.jpg)
 
 ### Orgainizational Units
-![Organizational Units](screenshots/02_ADUC_Organizational_Units.png.JPEG)
+![Organizational Units](ActiveDirectory-User-Access-Lab/Screenshots/02_ADUC_Organizational_Units.png.JPEG)
 ## Why This Matters
 This lab reflects real IAM tasks performed by system administrators and IAM engineers, including user provisioning, access governance, and permission management in enterprise environments.
