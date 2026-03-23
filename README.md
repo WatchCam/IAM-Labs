@@ -87,6 +87,8 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### Security Groups
 ![Security Groups](ActiveDirectory-User-Access-Lab/Screenshots/04_Security_Groups_Created.png.jpg)
 
+### File System Overview
+![File System](ActiveDirectory-User-Access-Lab/Screenshots/05_Server_File_System_Overview.png.jpeg)
 
 
 
