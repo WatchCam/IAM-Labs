@@ -90,6 +90,9 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### File System Overview
 ![File System](ActiveDirectory-User-Access-Lab/Screenshots/05_Server_File_System_Overview.png.jpeg)
 
+### Group Membership
+![Group Membership](ActiveDirectory-User-Access-Lab/Screenshots/06_User_Group_Membership_Sales_2.png.jpeg)
+
 
 
 ## Why This Matters
