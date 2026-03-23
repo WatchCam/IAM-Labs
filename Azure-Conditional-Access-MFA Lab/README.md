@@ -56,7 +56,7 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   A Conditional Access policy was created to require MFA for test users when accessing cloud applications.
 
   Screenshot:
-  ![Policy Overview](Azure-Conditional-Access-MFALab/Screenshots/01_CA_Policy_Overview.jpg)
+  01_CA_Policy_Overview.jpg
 
   ---
 
