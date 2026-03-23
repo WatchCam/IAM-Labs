@@ -82,7 +82,7 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ![Organizational Units](ActiveDirectory-User-Access-Lab/Screenshots/02_ADUC_Organizational_Units.png.JPEG)
 
 ### User Accounts
-
+![User Accounts](ActiveDirectory-User-Access-Lab/Screenshots/03_ADUC_User_Accounts.png.jpeg)
 
 
 
