@@ -74,15 +74,11 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ---
 
 ## Evidence
-Screenshots documenting each configuration step are included in the 'Screenshots'/ directory:
-1. Domain Overview
-2. Organizational Units
-3. User Accounts
-4. Security Groups
-5. Server File/ File Shares
-6. User Group Membership sales
-7. Company Shares Folder
-8. NTFS Permissions per department
 
+### Domain Overview
+![Domain Overview](screenshots/01_Aduc_Domain_Overview.png.jpg)
+
+### Orgainizational Units
+![Organizational Units](screenshots/02_ADUC_Organizational_Units.png.JPEG)
 ## Why This Matters
 This lab reflects real IAM tasks performed by system administrators and IAM engineers, including user provisioning, access governance, and permission management in enterprise environments.
