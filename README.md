@@ -80,5 +80,13 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 
 ### Orgainizational Units
 ![Organizational Units](ActiveDirectory-User-Access-Lab/Screenshots/02_ADUC_Organizational_Units.png.JPEG)
+
+### User Accounts
+
+
+
+
+
+
 ## Why This Matters
 This lab reflects real IAM tasks performed by system administrators and IAM engineers, including user provisioning, access governance, and permission management in enterprise environments.
