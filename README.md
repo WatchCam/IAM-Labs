@@ -96,6 +96,8 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### Company Shares
 ![Company Shares](ActiveDirectory-User-Access-Lab/Screenshots/07_CompanyShares_Folder_Created.png.jpeg)
 
+### NTFS Permissions - HR
+![HR Permissions](ActiveDirectory-User-Access-Lab/Screenshots/08_NTFS_Permissions_HR_Team.png.jpeg)
 
 
 ## Why This Matters
