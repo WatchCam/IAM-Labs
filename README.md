@@ -84,6 +84,8 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### User Accounts
 ![User Accounts](ActiveDirectory-User-Access-Lab/Screenshots/03_ADUC_User_Accounts.png.jpeg)
 
+### Security Groups
+![Security Groups](ActiveDirectory-User-Access-Lab/Screenshots/04_Security_Groups_Created.png.jpg)
 
 
 
