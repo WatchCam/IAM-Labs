@@ -1,6 +1,6 @@
 # IAM Labs Portfolio - Cam'Ron Brown
 
-Hands-on IAM portfolio demonstrating enterprise-level identity and security concepts including:
+Hands-on IAM portfolio demonstrating enterprise-level identity and security implementations including:
 
 - Active Directory (On-Prem IAM)
 - Identity Lifecycle Management (Joiner-Mover-Leaver)
