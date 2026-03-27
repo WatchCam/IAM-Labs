@@ -1,6 +1,6 @@
 # IAM Labs Portfolio - Cam'Ron Brown
 
-This repository showcases hands-on Identity & Access Management (IAM) labs covering:
+Hands-on IAM portfolio demonstrating enterprise-level identity and security concepts including:
 
 - Active Directory (On-Prem IAM)
 - Identity Lifecycle Management (Joiner-Mover-Leaver)
