@@ -56,7 +56,8 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   A Conditional Access policy was created to require MFA for test users when accessing cloud applications.
 
   Screenshot:
-  01_CA_Policy_Overview.jpg
+  <img width="3017" height="1917" alt="01_CA_Policy_Overview" src="https://github.com/user-attachments/assets/f1fc6e8e-877a-44d0-9967-c01d1f29f6b8" />
+
 
   ---
 
@@ -64,7 +65,8 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   The policy was scoped to a test user to demonstrate targeted access control.
 
   Screenshot:
-  02_CA_Users_Assigned.png
+  <img width="4283" height="2156" alt="02_CA_Users_Assigned png" src="https://github.com/user-attachments/assets/b8200b99-e4f7-4048-8276-830a1c1e9667" />
+
 
   ---
 
@@ -72,7 +74,8 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   All cloud applications were selected to ensure MFA enforcement across services.
 
   Screenshot: 
-  03_CA_Target_Resources.png
+  <img width="3024" height="4032" alt="03_CA_Target_Resources png" src="https://github.com/user-attachments/assets/cb839cd1-a57b-468f-851c-f9ceb6656158" />
+
 
   ---
 
@@ -80,7 +83,8 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   Multi-Factor Authentication was configured as the required access control.
 
   Screenshot:
-  04_CA_Grant_Controls_MFA.png
+  <img width="2116" height="2696" alt="04_CA_Grant_MFA png" src="https://github.com/user-attachments/assets/499be19b-4e4d-4b81-93a8-88fe5195679a" />
+
 
   ---
 
@@ -88,7 +92,8 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   The policy was enabled and actively enforced.
 
   Screenshot:
-  05_CA_Policy_State.png
+  <img width="1577" height="2043" alt="05_CA_Policy_State png" src="https://github.com/user-attachments/assets/08fde394-2683-4024-9077-f65aedfbbfec" />
+
 
   ---
 
@@ -98,7 +103,8 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   A sign-in attempt by the test user triggered the Conditional Accesspolicy and required MFA.
 
   Screenshot: 
-  06_JohnTest_Signin_Interrupted.png
+  <img width="3023" height="2060" alt="06_JohnTest_Signin_Interrupted png" src="https://github.com/user-attachments/assets/fe49f4a5-3032-41fd-98f1-ae60c4d319de" />
+
 
   ---
 
@@ -111,7 +117,8 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   This validates that the policy is functioning as intended.
 
   Screenshot:
-  07_CA_Enforcement_Details.png
+  <img width="3018" height="1496" alt="07_CA_Policy_Evaluation_Details png" src="https://github.com/user-attachments/assets/6d21aa54-cc15-4d78-a140-6ed8a9f90f7d" />
+
 
   ---
 
