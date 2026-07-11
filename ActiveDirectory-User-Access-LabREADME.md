@@ -105,5 +105,23 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### NTFS Permissions - Sales
 ![Sales Permissions](ActiveDirectory-User-Access-Lab/Screenshots/09_NTFS_Permissions_IT_Support.png.jpeg)
 
+---
+
+## Skills Demonstrated
+
+- Active Directory Users & Computers (ADUC)
+- Windows Server 2022
+- Organizational Units (OUs)
+- User Provisioning & Account Management 
+- Security Groups 
+- Group Memebership Management 
+- NTFS Permissions
+- File Sharing 
+- Role-Based Access Control (RBAC)
+- Least Privilege Access
+- Identity & Access Management (IAM)
+
+---
+
 ## Why This Matters
 This lab reflects real IAM tasks performed by system administrators and IAM engineers, including user provisioning, access governance, and permission management in enterprise environments.
