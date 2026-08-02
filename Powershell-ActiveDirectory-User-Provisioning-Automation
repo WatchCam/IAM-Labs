@@ -1,0 +1,103 @@
+# PowerShell Active Directory User Provisioning Lab
+
+## Overview
+
+This project demonstrates how to automate Active Directory user provisioning using PowerShell and a CSV file. Instead of manually creating users, the script reads user information from a CSV file, creates the accounts, places users into the correct Organizational Unit (OU), adds them to the appropriate security group, and records all actions in a log file.
+
+---
+
+## Technologies Used
+
+- Windows Server 2022
+- Active Directory Domain Services (AD DS)
+- PowerShell
+- CSV Data Import
+- Active Directory Users and Computers (ADUC)
+
+---
+
+## Skills Demonstrated
+
+- PowerShell automation
+- Active Directory administration
+- Identity provisioning
+- User account creation
+- Security group management
+- Organizational Unit (OU) management
+- CSV data processing
+- Logging and error handling
+- IAM user lifecycle concepts
+
+---
+
+## Project Structure
+
+```
+PowerShell-AD-User-Provisioning/
+│
+├── Scripts/
+│   └── New-IAMUsers.ps1
+│
+├── Input/
+│   └── NewUsers.csv
+│
+├── Logs/
+│   └── ProvisioningLog.txt
+│
+├── Screenshots/
+│
+└── README.md
+```
+
+---
+
+## How It Works
+
+1. Import the Active Directory module.
+2. Read user information from a CSV file.
+3. Verify whether each user already exists.
+4. Create new Active Directory user accounts.
+5. Place each user into the correct Organizational Unit.
+6. Add users to the appropriate security group.
+7. Record successful provisioning events in a log file.
+
+---
+
+## Sample Users Created
+
+| Name | Department | Job Title |
+|------|------------|-----------|
+| Marcus Johnson | Finance | Financial Analyst |
+| Ashley Davis | Human Resources | HR Coordinator |
+| Jordan Wilson | Information Technology | Help Desk Technician |
+
+---
+
+## Project Results
+
+Successfully automated:
+
+- User account creation
+- OU placement
+- Security group assignment
+- Logging of provisioning events
+- Duplicate account detection
+
+---
+
+## Screenshots
+
+Add screenshots showing:
+
+- PowerShell script
+- Successful execution
+- Finance OU
+- HR OU
+- Information Technology OU
+- Pr
+
+---
+
+## Learning Outcomes
+
+This project demonstrates practical Identity and Access Management (IAM) administration by automating the user provisioning process with PowerShell and Active Directory. It reflects common enterprise onboarding tasks performed by IAM Engineers, Identity Administrators, and Active Directory Administrators.
