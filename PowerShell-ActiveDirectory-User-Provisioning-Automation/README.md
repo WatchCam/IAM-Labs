@@ -1,4 +1,4 @@
-# PowerShell Active Directory User Provisioning Lab
+# PowerShell Active Directory User Provisioning Automation Lab
 
 ## Overview
 
