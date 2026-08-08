@@ -87,14 +87,42 @@ Successfully automated:
 
 ## Screenshots
 
-Add screenshots showing:
+### PowerShell Provisioning Script
+PowerShell script used to automate Active Directory user creation, OU placement, and group assignment.
 
-- PowerShell script
-- Successful execution
-- Finance OU
-- HR OU
-- Information Technology OU
-- Provisioning log
+<img width="1152" height="1536" alt="Powershell Script" src="https://github.com/user-attachments/assets/dab97dff-7dde-4350-9f06-d13fc2c79e10" />
+
+
+### Successful User Provisioning
+Successful execution showing user accounts provisioned from CSV input and assigned to the appropriate departments.
+
+<img width="1206" height="1608" alt="Successful Execution" src="https://github.com/user-attachments/assets/1fd1a18b-2177-45ce-b2a5-a5e80afd02cb" />
+
+
+### Finance OU
+Provisioned Finance users displayed in their designated Active Directory organizational unit.
+
+<img width="3024" height="4032" alt="Finance OU" src="https://github.com/user-attachments/assets/89786e7c-7662-4bf6-8585-7abe453e8144" />
+
+
+### HR OU
+Provisioned HR users displayed in their designated Active Directory organizational unit.
+
+<img width="3024" height="4032" alt="HR OU" src="https://github.com/user-attachments/assets/b546ce51-5b8f-467c-8089-739393118d4d" />
+
+
+### Information Technology OU
+Provisioned IT users displayed in their designated Active Directory organizational unit.
+
+
+<img width="3024" height="4032" alt="Information Technology OU" src="https://github.com/user-attachments/assets/6e1ef03b-53d9-4cfd-87a5-575c4d56f9a3" />
+
+
+### Provisioning Log
+Provisioning log documenting successful account creation and errors generated during testing and troubleshooting.
+
+<img width="1152" height="1536" alt="Provisioning Log" src="https://github.com/user-attachments/assets/51f43d68-372c-44c3-a2af-f8db5ddc7bbb" />
+
 
 ---
 
