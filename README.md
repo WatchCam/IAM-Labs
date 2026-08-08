@@ -68,7 +68,7 @@ Built an Active Directory environment using users, organizational units, securit
 
 Short technical walkthroughs demonstrating the implementation, testing, and validation of selected IAM projects.
 
-**Coming soon:**
+
 - PowerShell AD User Provisioning Automation
 - Microsoft Entra ID Conditional Access & MFA
 - Identity Lifecycle Management (JML)
