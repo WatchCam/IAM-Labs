@@ -3,13 +3,13 @@
 ## Lab Objective
 
 This lab simulates enterprise Identity Lifecycle Management (Joiner-Mover-Leaver) workflow using Microsoft Entra ID.
-The objective is to demostrate structured identity provisioning, role-based access control (RBAC), access reassignment , and secure offboarding procedures.
+The objective is to demonstrate structured identity provisioning, role-based access control (RBAC), access reassignment , and secure off-boarding procedures.
 
 ---
 
 # Joiner - Identity Provisioning 
 
-### Scenerio
+### Scenario
 A new employee is onboard into the Finance department as a Financial Analyst.
 
 ### Actions Performed 
@@ -59,7 +59,7 @@ The employee transfers from Finance to HR.
 
 ---
 
-#Leaver - Secure Offboarding 
+#Leaver - Secure Off-boarding 
 
 ### Scenario
 The employee leaves the organization.
