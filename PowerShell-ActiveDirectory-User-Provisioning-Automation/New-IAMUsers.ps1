@@ -3,7 +3,7 @@ Import-Module ActiveDirectory
 $CsvPath = "C:\IAM-Automation-Lab\Input\NewUsers.csv"
 $LogPath = "C:\IAM-Automation-Lab\Logs\ProvisioningLog.txt"
 $DomainDN = "DC=camlab,DC=local"
-$TemporaryPassword = ConvertTo-SecureString "Password123!" -AsPlainText -Force
+$TemporaryPassword = ConvertTo-SecureString "Greentomato5" -AsPlainText -Force
 
 $Users = Import-Csv -Path $CsvPath
 
