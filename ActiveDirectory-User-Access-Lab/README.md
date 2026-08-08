@@ -78,7 +78,7 @@ This follows **least privilege** and **role-based access control (RBAC)** best p
 ### Domain Overview
 ![Domain Overview](ActiveDirectory-User-Access-Lab/Screenshots/01_Aduc_Domain_Overview.png.jpg)
 
-### Orgainizational Units
+### Organizational Units
 ![Organizational Units](ActiveDirectory-User-Access-Lab/Screenshots/02_ADUC_Organizational_Units.png.JPEG)
 
 ### User Accounts
