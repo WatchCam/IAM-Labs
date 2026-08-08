@@ -100,7 +100,7 @@ By enforcing MFA through Conditional Access, the risk of unauthorized access is 
   ## Validation & Results
 
   ### Sign-In Attempt (Interrupted)
-  A sign-in attempt by the test user triggered the Conditional Accesspolicy and required MFA.
+  A sign-in attempt by the test user triggered the Conditional Access policy and required MFA.
 
   Screenshot: 
   <img width="3023" height="2060" alt="06_JohnTest_Signin_Interrupted png" src="https://github.com/user-attachments/assets/fe49f4a5-3032-41fd-98f1-ae60c4d319de" />
