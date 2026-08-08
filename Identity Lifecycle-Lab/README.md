@@ -39,7 +39,7 @@ A new employee is onboard into the Finance department as a Financial Analyst.
 # Mover - Department Transfer
 
 ### Scenario 
-The employee trnasfers from Finance to HR.
+The employee transfers from Finance to HR.
 
 ### Actions Performed 
 - Updated Department to Hr
