@@ -1,132 +1,191 @@
-# PowerShell Active Directory User Provisioning Automation Lab
+# Active Directory Identity Lifecycle Automation
 
-## Overview
+PowerShell automation for two common IAM operations: onboarding employees and removing access during offboarding. The lab uses CSV requests, validates Active Directory dependencies before making changes, applies least-privilege cleanup, and writes a structured audit trail.
 
-This project demonstrates how to automate Active Directory user provisioning using PowerShell and a CSV file. Instead of manually creating users, the script reads user information from a CSV file, creates the accounts, places users into the correct Organizational Unit (OU), adds them to the appropriate security group, and records all actions in a log file.
+> **Demo video:** Coming after validation in the Windows Server lab.
 
----
+## Business problem and risk
 
-## Technologies Used
+Manual account administration is slow and inconsistent. A missed group assignment can delay a new hire, while an account or group membership left active after separation creates unauthorized-access risk. This project turns repeatable joiner and leaver requests into controlled, traceable workflows.
 
-- Windows Server 2022
-- Active Directory Domain Services (AD DS)
-- PowerShell
-- CSV Data Import
-- Active Directory Users and Computers (ADUC)
+## Solution implemented
 
----
+I built two PowerShell workflows that automate the Active Directory identity lifecycle from approved CSV requests:
 
-## Skills Demonstrated
+- **Onboarding:** validates the request, confirms the target OU and group, prevents duplicate accounts, stages the identity as disabled, assigns the password and approved access, and enables it only after every step succeeds.
+- **Offboarding:** validates the ticketed request, disables the account, removes non-default group access, and moves the identity to a Disabled Users OU.
+- **Security and control:** removed the hard-coded password, added secure password entry, implemented `-WhatIf` previews, and added structured audit logging with timestamps, correlation IDs, outcomes, and error details.
 
-- PowerShell automation
-- Active Directory administration
-- Identity provisioning
-- User account creation
-- Security group management
-- Organizational Unit (OU) management
-- CSV data processing
-- Logging and error handling
-- IAM user lifecycle concepts
+This changes the lab from a basic account-creation script into a controlled joiner/leaver process that demonstrates provisioning, access revocation, validation, exception handling, and auditability.
 
----
+| Risk | Control demonstrated |
+|---|---|
+| Duplicate or incomplete accounts | Required-field validation and duplicate detection |
+| Provisioning into an invalid OU or group | AD object validation before account creation |
+| Exposed credentials in source code | Secure password prompt; no plaintext password in the repository |
+| Partial account remains after a failed request | Disabled staging, enable-last sequencing, and automatic rollback |
+| Former employee retains access | Account disablement and non-default group removal |
+| Destructive change made accidentally | `SupportsShouldProcess`, `-WhatIf`, and high-impact confirmation |
+| Weak evidence for troubleshooting/audits | UTC timestamps, correlation IDs, status, and details in a CSV log |
 
-## Project Structure
+## Workflow
 
-```
-PowerShell-AD-User-Provisioning/
-│
-├── Scripts/
-│   └── New-IAMUsers.ps1
-│
+### Joiner — `New-IAMUsers.ps1`
+
+1. Imports an authorized onboarding CSV.
+2. Validates every required value and the username format.
+3. Confirms the target OU and security group exist.
+4. Detects existing accounts and safely skips duplicates.
+5. Stages the user as disabled and applies the securely entered temporary password.
+6. Assigns the approved group, requires a password change at first sign-in, and enables the account only after all steps succeed.
+7. Records `Success`, `Skipped`, `Failed`, or `WhatIf` in the audit log.
+
+### Leaver — `Disable-IAMUsers.ps1`
+
+1. Imports an offboarding CSV containing a username, ticket, and reason.
+2. Confirms the Disabled Users OU exists.
+3. Finds the account and identifies its current group memberships.
+4. Disables the account.
+5. Removes all non-default group memberships.
+6. Moves the object to the Disabled Users OU.
+7. Writes the ticket and result to the same audit log.
+
+## Project structure
+
+```text
+PowerShell-ActiveDirectory-User-Provisioning-Automation/
 ├── Input/
-│   └── NewUsers.csv
-│
+│   ├── NewUsers.csv
+│   └── OffboardingUsers.csv
 ├── Logs/
-│   └── ProvisioningLog.txt
-│
+│   └── IAM-Audit.csv                 # Generated at runtime
+├── Scripts/
+│   ├── New-IAMUsers.ps1
+│   └── Disable-IAMUsers.ps1
 ├── Screenshots/
-│
+├── TESTING.md
 └── README.md
 ```
 
----
+## Lab requirements
 
-## How It Works
+- Windows Server 2022 with Active Directory Domain Services
+- PowerShell 5.1 or later
+- ActiveDirectory PowerShell module (RSAT)
+- An operator account delegated to create, disable, move, and update lab users/groups
+- Existing `HR`, `Finance`, `Information Technology`, and `Disabled Users` OUs
+- Existing `HR-Users`, `Finance-Users`, and `IT-Users` security groups
 
-1. Import the Active Directory module.
-2. Read user information from a CSV file.
-3. Verify whether each user already exists.
-4. Create new Active Directory user accounts.
-5. Place each user into the correct Organizational Unit.
-6. Add users to the appropriate security group.
-7. Record successful provisioning events in a log file.
+The sample domain is `camlab.local`. Override `-DomainDN`, `-UpnSuffix`, or `-DisabledUsersOU` if your lab uses different names.
 
----
+## Usage
 
-## Sample Users Created
+Run PowerShell as an account with the required delegated permissions from the project directory.
 
-| Name | Department | Job Title |
-|------|------------|-----------|
-| Marcus Johnson | Finance | Financial Analyst |
-| Ashley Davis | Human Resources | HR Coordinator |
-| Jordan Wilson | Information Technology | Help Desk Technician |
+Preview onboarding without creating accounts:
 
----
+```powershell
+.\Scripts\New-IAMUsers.ps1 -WhatIf
+```
 
-## Project Results
+Provision the approved users (the script securely prompts for the temporary password):
 
-Successfully automated:
+```powershell
+.\Scripts\New-IAMUsers.ps1
+```
 
-- User account creation
-- OU placement
-- Security group assignment
-- Logging of provisioning events
-- Duplicate account detection
+Preview offboarding—the recommended first step:
 
----
+```powershell
+.\Scripts\Disable-IAMUsers.ps1 -WhatIf
+```
 
-## Screenshots
+Execute the approved offboarding request:
 
-### PowerShell Provisioning Script
-PowerShell script used to automate Active Directory user creation, OU placement, and group assignment.
+```powershell
+.\Scripts\Disable-IAMUsers.ps1
+```
 
-<img width="1152" height="1536" alt="Powershell Script" src="https://github.com/user-attachments/assets/dab97dff-7dde-4350-9f06-d13fc2c79e10" />
+## Audit output
 
+Both workflows append to `Logs/IAM-Audit.csv` using this schema:
 
-### Successful User Provisioning
-Successful execution showing user accounts provisioned from CSV input and assigned to the appropriate departments.
+| Field | Purpose |
+|---|---|
+| `TimestampUtc` | Time of the event in a consistent audit timezone |
+| `CorrelationId` | Unique ID connecting one request to its result |
+| `Action` | `Provision` or `Offboard` |
+| `Username` | Target identity |
+| `Status` | `Success`, `Skipped`, `Failed`, or `WhatIf` |
+| `Details` | OU, group, ticket, reason, or error context |
 
-<img width="1206" height="1608" alt="Successful Execution" src="https://github.com/user-attachments/assets/1fd1a18b-2177-45ce-b2a5-a5e80afd02cb" />
+Logs are generated locally and intentionally excluded from source control because operational logs can contain identity data.
 
+## Validation evidence
 
-### Finance OU
-Provisioned Finance users displayed in their designated Active Directory organizational unit.
+The upgraded workflow was validated on Windows Server 2022 against the `camlab.local` lab domain. Testing confirmed successful provisioning, duplicate protection, secure failure handling, group assignment, account disablement, access removal, OU relocation, `-WhatIf` previews, and structured audit records.
 
-<img width="3024" height="4032" alt="Finance OU" src="https://github.com/user-attachments/assets/89786e7c-7662-4bf6-8585-7abe453e8144" />
+### Duplicate protection
 
+Existing accounts were skipped without modification, and each result was written to the audit log.
 
-### HR OU
-Provisioned HR users displayed in their designated Active Directory organizational unit.
+![Duplicate protection and audit rows](Screenshots/01-Duplicate-Protection-Audit.png)
 
-<img width="3024" height="4032" alt="HR OU" src="https://github.com/user-attachments/assets/b546ce51-5b8f-467c-8089-739393118d4d" />
+### Provisioning verification
 
+The disposable identity was enabled in the Information Technology OU and assigned to `IT-Users`.
 
-### Information Technology OU
-Provisioned IT users displayed in their designated Active Directory organizational unit.
+![Provisioned account verification](Screenshots/02-Provisioning-Verification.png)
 
+### Provisioning audit history
 
-<img width="3024" height="4032" alt="Information Technology OU" src="https://github.com/user-attachments/assets/6e1ef03b-53d9-4cfd-87a5-575c4d56f9a3" />
+The same audit trail captured the dry run, a domain password-policy rejection encountered during validation, a duplicate skip, and the final successful provisioning event. That failure also drove the final staged-account rollback control in the script.
 
+![Provisioning audit history](Screenshots/03-Provisioning-Audit-History.png)
 
-### Provisioning Log
-Provisioning log documenting successful account creation and errors generated during testing and troubleshooting.
+### Offboarding verification
 
-<img width="1152" height="1536" alt="Provisioning Log" src="https://github.com/user-attachments/assets/51f43d68-372c-44c3-a2af-f8db5ddc7bbb" />
+After the ticketed offboarding request, the identity was disabled, moved to the Disabled Users OU, and removed from `IT-Users`.
 
+![Offboarded account verification](Screenshots/06-Offboarding-Verification.png)
 
----
+### Offboarding audit history
 
-## Learning Outcomes
+The offboarding records show the `-WhatIf` previews and the completed access-removal event with ticket and separation reason.
 
-This project demonstrates practical Identity and Access Management (IAM) administration by automating the user provisioning process with PowerShell and Active Directory. It reflects common enterprise onboarding tasks performed by IAM Engineers, Identity Administrators, and Active Directory Administrators.
+![Offboarding audit history](Screenshots/07-Offboarding-Audit-History.png)
 
+See [TESTING.md](TESTING.md) for the full test and demo checklist.
+
+## Existing lab evidence
+
+### Successful provisioning
+
+![Successful execution](Screenshots/Successful%20Execution.JPG)
+
+### Department OUs
+
+![Finance OU](Screenshots/Finance%20OU.JPG)
+
+![HR OU](Screenshots/HR%20OU.JPG)
+
+![Information Technology OU](Screenshots/Information%20Technology%20OU.JPG)
+
+### Original provisioning log
+
+![Provisioning log](Screenshots/Provisioning%20Log.PNG)
+
+## Skills demonstrated
+
+- Active Directory identity lifecycle administration
+- Joiner/leaver workflow automation
+- PowerShell parameterization and secure input
+- OU and security-group validation
+- Duplicate and exception handling
+- Access revocation and account disablement
+- Change preview with `-WhatIf`
+- Structured audit logging and ticket traceability
+
+## Next improvement
+
+Add a manager-approved role mapping file so group access is selected from authorized job-role mappings instead of being supplied directly in each request.
