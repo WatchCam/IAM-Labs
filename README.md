@@ -1,4 +1,4 @@
-# Cam'Ron Brown | Junior IAM & Access Management Portfolio
+# Cam'Ron Brown | IAM & Access Management Portfolio
 
 Hands-on lab portfolio focused on entry-level Identity and Access Management responsibilities: identity lifecycle administration, access control, authentication security, Active Directory, Microsoft Entra ID, and PowerShell automation.
 
