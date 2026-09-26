@@ -2,7 +2,7 @@
 
 # Cam'Ron Brown
 
-### Junior Identity & Access Management Portfolio
+###  Identity & Access Management Portfolio
 
 Hands-on IAM labs focused on identity lifecycle operations, access control, authentication security, and automation.
 
