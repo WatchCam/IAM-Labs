@@ -1,112 +1,73 @@
-# Cam'Ron Brown | IAM Portfolio
+# Cam'Ron Brown | Junior IAM & Access Management Portfolio
 
-🔐 **Identity & Access Management (IAM) Portfolio**
+Hands-on lab portfolio focused on entry-level Identity and Access Management responsibilities: identity lifecycle administration, access control, authentication security, Active Directory, Microsoft Entra ID, and PowerShell automation.
 
-Hands-on IAM engineering portfolio focused on identity lifecycle management, access control, authentication, privileged access, and automation.
+## Core technologies
 
----
+**Microsoft Entra ID · Active Directory · PowerShell · Conditional Access · MFA · RBAC · Windows Server · Identity Lifecycle Management**
 
-## 🧰 Technologies
+## Flagship projects
 
-**Microsoft Entra ID • Active Directory • PowerShell • CyberArk PAM • Conditional Access • MFA • RBAC • Windows Server • Identity Lifecycle Management**
+### 1. Active Directory Identity Lifecycle Automation
 
----
+Automates CSV-based onboarding and ticketed offboarding in Active Directory. The PowerShell workflows validate requests and AD dependencies, prevent duplicate accounts, use secure password entry, support `-WhatIf`, remove access during separation, and create a structured audit trail.
 
-## 🚀 Featured Projects
+**IAM relevance:** provisioning · deprovisioning · identity operations · access revocation · automation · audit evidence
 
-### ⚙️ PowerShell Active Directory Provisioning Automation
+[View the PowerShell lifecycle project](./PowerShell-ActiveDirectory-User-Provisioning-Automation/)
 
-Automated user provisioning from CSV data into Active Directory, including OU placement, security group assignment, duplicate detection, error handling, and provisioning logs.
+### 2. Active Directory RBAC & NTFS Access Control
 
-**Skills:** PowerShell • Active Directory • User Provisioning • Automation • Identity Lifecycle Management
+Maps department roles to Active Directory security groups and NTFS permissions. The lab demonstrates group-based authorization, least privilege, and reviewable access instead of direct permissions assigned to individual users.
 
-[View Project](./PowerShell-ActiveDirectory-User-Provisioning-Automation/)
+**IAM relevance:** RBAC · access administration · security groups · least privilege · permission troubleshooting
 
----
+[View the AD access-control project](./ActiveDirectory-User-Access-Lab/)
 
-### 🔐 Microsoft Entra ID Conditional Access & MFA
+### 3. Microsoft Entra Conditional Access & MFA
 
-Implemented Conditional Access policies to enforce MFA and protect cloud resources while validating authentication behavior through sign-in logs.
+Implements a scoped Conditional Access policy that requires MFA and validates the authentication decision through Microsoft Entra sign-in logs.
 
-**Skills:** Microsoft Entra ID • Conditional Access • MFA • Authentication • Sign-In Logs
+**IAM relevance:** authentication · MFA · policy enforcement · sign-in analysis · identity security
 
-[View Project](./Azure-Conditional-Access-MFA%20Lab/)
+[View the Entra Conditional Access project](./Azure-Conditional-Access-MFA%20Lab/)
 
----
+## Additional IAM lab
 
-### 🔄 Identity Lifecycle Management — JML
+### Microsoft Entra Joiner-Mover-Leaver Lifecycle
 
-Simulated enterprise Joiner, Mover, and Leaver workflows covering user provisioning, access modification, least privilege, role changes, and deprovisioning.
+Processes a test identity through onboarding, a Finance-to-HR role change, and offboarding. The workflow demonstrates role-aligned access, removal of previous access, group reassignment, and account disablement.
 
-**Skills:** JML • Provisioning • Deprovisioning • RBAC • Least Privilege • Identity Governance
+**IAM relevance:** JML · provisioning · RBAC · mover access cleanup · deprovisioning
 
-[View Project](./Identity%20Lifecycle-Lab/)
+[View the JML project](./Identity%20Lifecycle-Lab/)
 
----
-
-### 🏢 Active Directory Access Management
-
-Built an Active Directory environment using users, organizational units, security groups, RBAC, and NTFS permissions to simulate enterprise access management.
-
-**Skills:** Active Directory • Windows Server • RBAC • Security Groups • NTFS Permissions
-
-[View Project](./ActiveDirectory-User-Access-Lab/)
-
-
----
-
-## 🛡️ Certifications
+## Certifications
 
 - Microsoft Certified: Identity and Access Administrator Associate (SC-300)
 - CompTIA Security+
 - CyberArk Defender
 - CyberArk Sentry
 
----
+## What this portfolio demonstrates
 
-## 🎥 Project Demonstrations
-
-Short technical walkthroughs demonstrating the implementation, testing, and validation of selected IAM projects.
-
-
-- PowerShell AD User Provisioning Automation
-- Microsoft Entra ID Conditional Access & MFA
-- Identity Lifecycle Management (JML)
-
----
-
-## 🔬 Currently Building
-
-### Security Monitoring & Identity Threat Detection
-
-Building a Windows/Active Directory security monitoring environment using **Splunk, Sysmon, Windows Event Logs, and attack simulation** to investigate authentication activity and identity-related security events.
-
-### Identity Governance & Administration (IGA)
-
-Developing an identity governance project focused on **access requests, approvals, role-based access, access reviews, separation of duties, and identity lifecycle governance**.
-
----
-
-## 🎯 Portfolio Focus
-
-This portfolio demonstrates practical experience across:
-
-- Identity provisioning and deprovisioning
-- Joiner-Mover-Leaver (JML) lifecycle processes
+- User provisioning and account offboarding
+- Joiner-Mover-Leaver lifecycle processes
 - Active Directory administration
-- Microsoft Entra ID
+- Microsoft Entra ID administration
+- Role-based and group-based access control
 - Conditional Access and MFA
-- Role-Based Access Control (RBAC)
-- Privileged Access Management (PAM)
-- PowerShell IAM automation
-- Identity governance
-- Authentication monitoring and investigation
+- PowerShell identity automation
+- Validation, error handling, and audit evidence
 
----
+## Current development
 
-*Hands-on IAM engineering projects designed to simulate real-world identity and access management environments.*
+- Publishing a short demonstration of the PowerShell lifecycle automation
+- Expanding Entra identity-governance coverage through RBAC and access reviews
+- Building a documented CyberArk PAM lab before adding it as a portfolio project
 
----
+## Contact
 
-## Author
-Cam'Ron Brown
+**Cam'Ron Brown**
+
+[LinkedIn](https://www.linkedin.com/in/camron-brown41803)
