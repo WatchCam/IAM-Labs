@@ -18,17 +18,19 @@ This lab uses organizational units, role-based security groups, and group-assign
 
 ## Solution implemented
 
-I built a Windows Server Active Directory environment with department-based users, organizational units, and security groups. I created HR, IT Support, and Sales folders in a centralized company share and assigned NTFS permissions to the matching groups.
+I built a Windows Server Active Directory environment with department-based users, organizational units, and security groups. I created HR, IT, and Sales folders in a centralized company share and assigned NTFS permissions to the matching groups.
 
-Users receive access because of their approved group membership—not through direct user permissions. This reflects a scalable RBAC pattern used in enterprise Active Directory environments.
+Users receive access through approved security-group membership rather than direct user permissions. This reflects a scalable RBAC pattern used in enterprise Active Directory environments.
 
 ## Environment
 
 - Windows Server 2022 domain controller
 - Active Directory Domain Services
 - Active Directory Users and Computers
-- NTFS file system and departmental folders
-- Organizational units and security groups
+- PowerShell
+- SMB file sharing
+- NTFS permissions
+- Department-based security groups
 
 ## Access workflow
 
@@ -36,39 +38,44 @@ Users receive access because of their approved group membership—not through di
 2. Provision test identities using separate standard and privileged accounts.
 3. Create `HR_Team`, `IT_Support`, and `Sales_Team` security groups.
 4. Add each user to the group matching the approved business role.
-5. Create HR, IT, and Sales folders within the company share.
-6. Assign NTFS permissions to security groups rather than individual users.
-7. Review group membership and folder permissions to verify the access model.
+5. Create HR, IT, and Sales folders within `C:\CompanyShares`.
+6. Publish `CompanyShares` as an SMB share.
+7. Assign NTFS permissions to security groups instead of individual users.
+8. Review group membership, share access, and folder permissions.
 
 ## Validation evidence
 
-### Domain and organizational structure
+### Active Directory identities and groups
 
-![Domain overview](Screenshots/01_Aduc_%20Domain_Overview.png.jpg)
+The Finance organizational unit contains its assigned users and security group.
 
-![Organizational units](Screenshots/02_ADUC_Organizational_Units.png.JPEG)
+![Finance users and group](Screenshots/01_ADUC_Finance_Users_and_Group.png)
 
-![User accounts](Screenshots/03_ADUC_User_Accounts.png.jpeg)
+Finance group membership was reviewed to confirm that access is managed centrally.
 
-### Security groups and membership
+![Finance group membership](Screenshots/02_Finance_Group_Membership.png)
 
-![Security groups](Screenshots/04_Security_Groups_Created.png.jpg)
+The central user organizational unit contains the test identities and department security groups used in the access model.
 
-![Sales group membership](Screenshots/06_User_Group_Membership_Sales_2.png.jpeg)
+![Users and security groups](Screenshots/03_ADUC_Users_and_Security_Groups.png)
 
-### File-share structure
+Sales group membership confirms that John Carter and Marie Lopez receive Sales access through `Sales_Team`.
 
-![Server file system](Screenshots/05_Server_File_System_Overview.png.jpeg)
+![Sales team membership](Screenshots/04_Sales_Team_Group_Membership.png)
 
-![Company shares](Screenshots/07_CompanyShares_Folder_Created.png.jpeg)
+### File-share structure and permissions
 
-### Department permissions
+The company share contains separate HR, IT, and Sales department folders.
 
-![HR permissions](Screenshots/08_NTFS_Permissions_HR_Team.png.jpeg)
+![CompanyShares department folders](Screenshots/05_CompanyShares_Department_Folders.png)
 
-![IT permissions](Screenshots/09_NTFS_Permissions_IT_Support.png.jpeg)
+SMB share access grants Administrators Full access and Authenticated Users Change access.
 
-![Sales permissions](Screenshots/10_NTFS_Permissions_Sales_Team.png.jpeg)
+![CompanyShares share access](Screenshots/06_CompanyShares_Share_Access.png)
+
+NTFS permissions grant Modify access to the matching department groups while Administrators and SYSTEM retain Full control.
+
+![Department NTFS permissions](Screenshots/07_Department_NTFS_Permissions.png)
 
 ## Result
 
@@ -78,11 +85,13 @@ The completed environment uses role-based group membership to control access to 
 
 - Active Directory administration
 - RBAC and group-based authorization
-- User and group management
+- User and security-group management
 - Organizational-unit design
+- SMB share administration
 - NTFS permissions
 - Least-privilege access
 - Access review and troubleshooting
+- PowerShell validation
 
 ## Production improvements
 
@@ -90,7 +99,7 @@ In a production environment, I would add:
 
 - Separate share and NTFS permission layers using an AGDLP-style group model
 - A documented access-request and manager-approval workflow
-- Explicit authorized and unauthorized user test results
+- Explicit authorized and unauthorized user testing
 - Periodic access reviews for department groups
 - PowerShell reporting for group membership and permission drift
 - Ticket IDs and change records for every access modification
