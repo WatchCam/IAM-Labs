@@ -53,7 +53,7 @@ The Finance organizational unit contains its assigned users and security group.
 
 Finance group membership was reviewed to confirm that access is managed centrally.
 
-![Finance group membership](Screenshots/02_Finance_Group_Membership.png)
+![Finance group membership](Screenshots/02_Finance_Group_Memebership.png)
 
 The central user organizational unit contains the test identities and department security groups used in the access model.
 
