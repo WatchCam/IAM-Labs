@@ -2,7 +2,7 @@
 
 PowerShell automation for two common IAM operations: onboarding employees and removing access during offboarding. The lab uses CSV requests, validates Active Directory dependencies before making changes, applies least-privilege cleanup, and writes a structured audit trail.
 
-> **Demo video:** Coming after validation in the Windows Server lab.
+> **Demo video:** https://youtu.be/3XVPtikSCA4
 
 ## Business problem and risk
 
