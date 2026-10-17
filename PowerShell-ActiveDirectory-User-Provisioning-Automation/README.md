@@ -1,4 +1,4 @@
-# Active Directory Identity Lifecycle Automation
+# PowerShell Active Directory User Provisioning Automation
 
 PowerShell automation for two common IAM operations: onboarding employees and removing access during offboarding. The lab uses CSV requests, validates Active Directory dependencies before making changes, applies least-privilege cleanup, and writes a structured audit trail.
 
